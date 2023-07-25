@@ -1,35 +1,35 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import "./App.css";
+import ItemContainer from "./ItemContainer";
+import Tab from "./Tab";
+import TabContainer from "./TabContainer";
+import TabItem from "./TabItem";
+import Tabs from "./Tabs";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div>
+      <Tabs>
+        <TabContainer>
+          <Tab value={1}>Tab 1</Tab>
+          <Tab value={2}>Tab 2</Tab>
+        </TabContainer>
+        <ItemContainer>
+          <TabItem value={1}>Item 1</TabItem>
+          <TabItem value={2}>
+            <div
+              style={{
+                width: "100%",
+                height: "100%",
+                backgroundColor: "red",
+              }}
+            >
+              Hello
+            </div>
+          </TabItem>
+        </ItemContainer>
+      </Tabs>
+    </div>
+  );
 }
 
-export default App
+export default App;
